@@ -27,7 +27,7 @@ next_day_end = datetime.combine(next_day, datetime.max.time())
 # Open the CSV file in write mode
 with open("weather_data.csv", "w", newline="") as csvfile:
     mycsv = csv.writer(csvfile)
-    mycsv.writerow(["Time", "temperature","feels_Like", "minimal_temp", "maximal_temp","speed_of_wind", "humidity","description_of_weather"])
+    mycsv.writerow(["time", "temperature","feels_like", "minimal_temp", "maximal_temp","speed_of_wind", "humidity","description_of_weather"])
 
     for forecast in forecast_data:
         # Convert the forecast timestamp to a datetime object
