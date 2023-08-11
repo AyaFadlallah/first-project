@@ -1,0 +1,16 @@
+
+# Environments
+.env
+.venv
+*env/
+venv/
+dfsf
+
+#csv files
+*.csv
+
+# my testing codes
+*testing.py
+
+#json files
+*.json
