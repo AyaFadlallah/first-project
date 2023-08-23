@@ -1,0 +1,27 @@
+
+version: 2
+
+models:
+  - name: weather_dbt_model
+    description: "This model shows shows the maximal, minimal and average temperature, the average speed of wind and the average humidity of the next day in Beirut"
+    columns:
+      - name: minimal_temperature
+        description: "next day's minimal temperature"
+        tests:
+          - not_null
+      - name: maximal_temperature
+        description: "next day's maximal temperature"
+        tests:
+          - not_null
+      - name: average_temperature
+        description: "next day's average temperature"
+        tests:
+          - not_null
+      - name: average_speed_of_wind
+        description: "next day's average speed of wind"
+        tests:
+          - not_null
+      - name: average_humidity
+        description: "next day's average humidity"
+        tests:
+          - not_null       
