@@ -4,7 +4,6 @@
 .venv
 *env/
 venv/
-dfsf
 
 #csv files
 *.csv
@@ -14,3 +13,20 @@ dfsf
 
 #json files
 *.json
+
+#config
+*config*
+
+#my simples
+my*
+
+*pyc
+airflow*
+logs
+
+dbt*/
+target/
+dbt_packages/
+logs/
+*.yml
+
