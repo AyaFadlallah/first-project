@@ -24,9 +24,8 @@ my*
 airflow*
 logs
 
-dbt*/
-target/
+
+# in dbt
+.gitkeep
 dbt_packages/
 logs/
-*.yml
-
