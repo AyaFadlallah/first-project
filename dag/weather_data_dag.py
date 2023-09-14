@@ -30,7 +30,7 @@ ingest=PythonOperator(task_id='ingest_weather_data',
                             dag=dag)
 
 transform = BashOperator(task_id='transform_weather_data',
-    bash_command='dbt run',
-    dag=dag)
+                        bash_command='dbt run',
+                        dag=dag)
     
 fetch >> ingest >> transform
