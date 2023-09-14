@@ -1,5 +1,9 @@
 from sqlalchemy import create_engine
 import pandas as pd
+import os
+import sys
+home = os.environ['FORECAST_PROJECT_HOME']
+sys.path.append(home)
 from config import ip, database_name, my_password
 
 def ingest_data():
@@ -20,6 +24,5 @@ def ingest_data():
     df = pd.DataFrame(data)
 
     # to sql
-    df.to_sql('next_day_weather', con=engine, if_exists='replace', index= False)
+    df.to_sql('weather_predictions', con=engine, if_exists='append', index= False)
     return
-
