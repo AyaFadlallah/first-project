@@ -24,8 +24,10 @@ my*
 airflow*
 logs
 
-
-# in dbt
-.gitkeep
+###
+target/
+dbt_modules/
 dbt_packages/
 logs/
+models/local/
+profiles*
