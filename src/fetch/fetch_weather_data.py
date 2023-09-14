@@ -1,9 +1,11 @@
 import requests
-import csv
 from datetime import datetime, timedelta
 import pandas as pd
+import os
+import sys
+home = os.environ['FORECAST_PROJECT_HOME']
+sys.path.append(home)
 from config import my_api_key
-
 
 
 def fetch_data():
