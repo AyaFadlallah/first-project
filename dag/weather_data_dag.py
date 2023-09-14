@@ -15,8 +15,8 @@ default_args = {
     'owner': owner,
     'retries': 5,
     'retry_delay': timedelta(minutes=5),
-    'start_date' : datetime(2023,8,8),
-    'schedule':timedelta(minutes=1), # run daily 
+    'start_date' : datetime(2023,9,14),
+    'schedule':timedelta(hours=1),
     'catchup':False
 }
 dag = DAG('weather_data_dag', default_args=default_args)
@@ -31,6 +31,7 @@ ingest=PythonOperator(task_id='ingest_weather_data',
 
 transform = BashOperator(task_id='transform_weather_data',
                         bash_command='dbt run',
+                        cwd='src/transform/dbt_project/',
                         dag=dag)
     
 fetch >> ingest >> transform
