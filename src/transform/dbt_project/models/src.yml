@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+    - name: dbo
+      database: testdb
+      tables:
+        - name: next_day_weather
+        - name: myweather2
+        - name: weather_predictions
+# sources:
+#   - name: <source_name>
+#     database: <database_name>
+#     tables:
+#       - name: <table_name>
+#         identifier: <table_identifier>
