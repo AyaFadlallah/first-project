@@ -5,10 +5,12 @@ import os
 import sys
 home = os.environ['FORECAST_PROJECT_HOME']
 sys.path.append(home)
-from config import my_api_key
-
 
 def fetch_data():
+    #import airflow variable
+    from airflow.models import Variable
+    my_api_key = Variable.get('my_api_key')
+
     api_key = my_api_key
     api_url = "https://api.openweathermap.org/data/2.5/forecast"
 
