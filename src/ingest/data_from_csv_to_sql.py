@@ -1,16 +1,13 @@
 from sqlalchemy import create_engine
 import pandas as pd
-import os
-import sys
-home = os.environ['FORECAST_PROJECT_HOME']
-sys.path.append(home)
-from config import ip, database_name, my_password
 
 def ingest_data():
-    host = ip
-    db = database_name
+    # import airflow variables
+    from airflow.models import Variable
+    host = Variable.get('sql_host')
+    db = Variable.get('database_name')
     user = 'sa' 
-    password = my_password
+    password = Variable.get('sql_password')
 
     def mssql_engine(user, password, host, db):
         engine = create_engine(
