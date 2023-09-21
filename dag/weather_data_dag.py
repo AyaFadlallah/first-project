@@ -7,10 +7,11 @@ import os
 import sys
 home = os.environ['FORECAST_PROJECT_HOME']
 sys.path.append(home)
-from config import owner
 from src.fetch.fetch_weather_data import fetch_data
 from src.ingest.data_from_csv_to_sql import ingest_data
 
+from airflow.models import Variable
+owner = Variable.get('owner')
 default_args = {
     'owner': owner,
     'retries': 5,
